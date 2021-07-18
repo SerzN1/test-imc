@@ -1,25 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+      <header className="header">
+        <div className="container">
+          <h1 className="title">Statistics</h1>
+        </div>
       </header>
-    </div>
+      <main className="main">
+        <div className="container">
+
+        </div>
+      </main>
+      <footer className="footer">
+        <div className="container">Copyright {new Date().getFullYear()} by sn1</div>
+      </footer>
+    </>
   );
 }
 

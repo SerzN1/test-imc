@@ -5,7 +5,7 @@
 }
 
 .row {
-  margin: 0 -10px;
+  margin: 0 -10px 2rem;
   display: flex;
 }
 
@@ -24,23 +24,10 @@
   }
 }
 
-/* TODO: Extract header/footer */
-.header {
-  padding: 1rem 0;
-  background-color: var(--bg-white);
-  color: var(--font-dark);
-}
-
-.title {
-  margin: 0;
-}
-
 .main {
   flex-grow: 1;
 }
 
-.footer {
-  padding: 1rem 0;
-  background: var(--bg-light);
-  color: var(--font-dark);
+.filters {
+  margin-bottom: 1rem;
 }

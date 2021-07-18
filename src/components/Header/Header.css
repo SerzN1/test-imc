@@ -1,0 +1,9 @@
+.header {
+  padding: 1rem 0;
+  background-color: var(--bg-white);
+  color: var(--font-dark);
+}
+
+.title {
+  margin: 0;
+}

@@ -1,7 +1,6 @@
 .table-wrapper {
   overflow-x: auto;
   white-space: nowrap;
-  margin-bottom: 2rem;
   padding-bottom: .25rem;
   width: 100%;
 }
@@ -29,7 +28,7 @@
   background-color: var(--bg-white);
 }
 
-.table-body tr:nth-child(odd) {
+.table-body tr:nth-child(odd) td {
   background-color: var(--bg-light);
 }
 .table-body td {
@@ -46,5 +45,4 @@
   position: sticky;
   left: 0px;
   color: var(--font-semi-light);
-  background-color: var(--bg-light);
 }

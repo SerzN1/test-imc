@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Header } from './components/Header/Header';
+import { Footer } from './components/Footer/Footer';
 import { H2 } from './components/Typography/Typography';
 import { Filter } from './components/Filter/Filter';
 import { BestCustomersTable } from './patterns/BestCustomersTable';
@@ -17,14 +19,11 @@ function App() {
 
   return (
     <>
-      <header className="header">
-        <div className="container">
-          <h1 className="title">Statistics</h1>
-        </div>
-      </header>
+      <Header />
       <main className="main">
         <div className="container">
-          <section className="row">
+
+          <section className="row filters">
             <div className="col">
               <Filter
                 filters={PERIOD_FILTER}
@@ -54,13 +53,10 @@ function App() {
               <BestCustomersTable valueType={valueType} />
             </div>
           </section>
+
         </div>
       </main>
-      <footer className="footer">
-        <div className="container">
-          Copyright {new Date().getFullYear()} by sn1
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }

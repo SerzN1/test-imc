@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
-import {Filter} from './components/Filter/Filter'
+import { H2 } from './components/Typography/Typography';
+import { Filter } from './components/Filter/Filter';
+import { BestCustomersTable } from './patterns/BestCustomersTable';
+import { LatestInvoicesTable } from './patterns/LatestInvoicesTable';
+import { PeriodFilter, ValueTypeFilter } from './constant';
 import './App.css';
 
-const PERIOD_FILTER = ['week', 'month']
-const VALUE_TYPE_FILTER = ['revenue', 'margin']
+const PERIOD_FILTER = Object.keys(PeriodFilter);
+const VALUE_TYPE_FILTER = Object.keys(ValueTypeFilter);
 
 function App() {
-  const [period, setPeriod] = useState(PERIOD_FILTER[0])
-  const [valueType, setValueType] = useState(VALUE_TYPE_FILTER[0])
+  const [period, setPeriod] = useState<PeriodFilter>(PeriodFilter.month);
+  const [valueType, setValueType] = useState<ValueTypeFilter>(
+    ValueTypeFilter.revenue
+  );
 
   return (
     <>
@@ -20,21 +26,40 @@ function App() {
         <div className="container">
           <section className="row">
             <div className="col">
-              <Filter filters={PERIOD_FILTER} selectedFilter={period} onFilterSelected={setPeriod} />
+              <Filter
+                filters={PERIOD_FILTER}
+                selectedFilter={period}
+                onFilterSelected={setPeriod}
+              />
             </div>
             <div className="col">
-              <Filter filters={VALUE_TYPE_FILTER} selectedFilter={valueType} onFilterSelected={setValueType} />
+              <Filter
+                filters={VALUE_TYPE_FILTER}
+                selectedFilter={valueType}
+                onFilterSelected={setValueType}
+              />
             </div>
           </section>
 
-          <section>
-            {period}
-            {valueType}
+          <section className="row">
+            <div className="col-12">
+              <H2>Latest invioces</H2>
+              <LatestInvoicesTable valueType={valueType} />
+            </div>
+          </section>
+
+          <section className="row">
+            <div className="col-12">
+              <H2>Our best customers</H2>
+              <BestCustomersTable valueType={valueType} />
+            </div>
           </section>
         </div>
       </main>
       <footer className="footer">
-        <div className="container">Copyright {new Date().getFullYear()} by sn1</div>
+        <div className="container">
+          Copyright {new Date().getFullYear()} by sn1
+        </div>
       </footer>
     </>
   );

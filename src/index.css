@@ -2,11 +2,16 @@
     --light: #D9EEE1;
     --dark: #059862;
     --bg-white: #fff;
-    --bg-light: #E7E9EB;
+    --bg-light: #f9fafb;
     --bg-dark: #282A35;
     --font: #333;
     --font-dark: #000;
     --font-light: #f1f1f1;
+    --font-semi-light: #8d96b2;
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
 }
 
 body {

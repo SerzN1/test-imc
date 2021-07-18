@@ -1,0 +1,31 @@
+.filter {
+  list-style: none;
+  margin: 0;
+  display: flex;
+  padding: 0;
+}
+
+.filter-item {
+  padding: .5em 1em 0.4em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  border: 1px solid gray;
+  margin-right: -1px;
+  cursor: pointer;
+  background-color: var(--bg-light);
+}
+
+.filter-item:first-child {
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+
+.filter-item:last-child {
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+.filter-item--selected {
+  cursor: default;
+  background-color: var(--light);
+}

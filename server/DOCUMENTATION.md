@@ -1,17 +1,17 @@
 # From [json-server official repo](https://raw.githubusercontent.com/typicode/json-server/)
 
-
-Get a full fake REST API with __zero coding__ in __less than 30 seconds__ (seriously)
+Get a full fake REST API with **zero coding** in **less than 30 seconds** (seriously)
 
 Created with <3 for front-end developers who need a quick back-end for prototyping and mocking.
 
-* [Egghead.io free video tutorial - Creating demo APIs with json-server](https://egghead.io/lessons/nodejs-creating-demo-apis-with-json-server)
-* [JSONPlaceholder - Live running version](https://jsonplaceholder.typicode.com)
-* [__My JSON Server__ - no installation required, use your own data](https://my-json-server.typicode.com)
+- [Egghead.io free video tutorial - Creating demo APIs with json-server](https://egghead.io/lessons/nodejs-creating-demo-apis-with-json-server)
+- [JSONPlaceholder - Live running version](https://jsonplaceholder.typicode.com)
+- [**My JSON Server** - no installation required, use your own data](https://my-json-server.typicode.com)
 
 See also:
-* :dog: [husky - Git hooks made easy](https://github.com/typicode/husky)
-* :hotel: [hotel - developer tool with local .localhost domain and https out of the box](https://github.com/typicode/hotel)
+
+- :dog: [husky - Git hooks made easy](https://github.com/typicode/husky)
+- :hotel: [hotel - developer tool with local .localhost domain and https out of the box](https://github.com/typicode/hotel)
 
 <p>&nbsp;</p>
 
@@ -45,40 +45,40 @@ See also:
 
 - [Getting started](#getting-started)
 - [Routes](#routes)
-    * [Plural routes](#plural-routes)
-    * [Singular routes](#singular-routes)
-    * [Filter](#filter)
-    * [Paginate](#paginate)
-    * [Sort](#sort)
-    * [Slice](#slice)
-    * [Operators](#operators)
-    * [Full-text search](#full-text-search)
-    * [Relationships](#relationships)
-    * [Database](#database)
-    * [Homepage](#homepage)
+  - [Plural routes](#plural-routes)
+  - [Singular routes](#singular-routes)
+  - [Filter](#filter)
+  - [Paginate](#paginate)
+  - [Sort](#sort)
+  - [Slice](#slice)
+  - [Operators](#operators)
+  - [Full-text search](#full-text-search)
+  - [Relationships](#relationships)
+  - [Database](#database)
+  - [Homepage](#homepage)
 - [Extras](#extras)
-    * [Static file server](#static-file-server)
-    * [Alternative port](#alternative-port)
-    * [Access from anywhere](#access-from-anywhere)
-    * [Remote schema](#remote-schema)
-    * [Generate random data](#generate-random-data)
-    * [HTTPS](#https)
-    * [Add custom routes](#add-custom-routes)
-    * [Add middlewares](#add-middlewares)
-    * [CLI usage](#cli-usage)
-    * [Module](#module)
-        + [Simple example](#simple-example)
-        + [Custom routes example](#custom-routes-example)
-        + [Access control example](#access-control-example)
-        + [Custom output example](#custom-output-example)
-        + [Rewriter example](#rewriter-example)
-        + [Mounting JSON Server on another endpoint example](#mounting-json-server-on-another-endpoint-example)
-        + [API](#api)
-    * [Deployment](#deployment)
+  - [Static file server](#static-file-server)
+  - [Alternative port](#alternative-port)
+  - [Access from anywhere](#access-from-anywhere)
+  - [Remote schema](#remote-schema)
+  - [Generate random data](#generate-random-data)
+  - [HTTPS](#https)
+  - [Add custom routes](#add-custom-routes)
+  - [Add middlewares](#add-middlewares)
+  - [CLI usage](#cli-usage)
+  - [Module](#module)
+    - [Simple example](#simple-example)
+    - [Custom routes example](#custom-routes-example)
+    - [Access control example](#access-control-example)
+    - [Custom output example](#custom-output-example)
+    - [Rewriter example](#rewriter-example)
+    - [Mounting JSON Server on another endpoint example](#mounting-json-server-on-another-endpoint-example)
+    - [API](#api)
+  - [Deployment](#deployment)
 - [Links](#links)
-    * [Video](#video)
-    * [Articles](#articles)
-    * [Third-party tools](#third-party-tools)
+  - [Video](#video)
+  - [Articles](#articles)
+  - [Third-party tools](#third-party-tools)
 - [License](#license)
 
 <!-- tocstop -->
@@ -95,12 +95,8 @@ Create a `db.json` file with some data
 
 ```json
 {
-  "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
-  ],
-  "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
-  ],
+  "posts": [{ "id": 1, "title": "json-server", "author": "typicode" }],
+  "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
   "profile": { "name": "typicode" }
 }
 ```
@@ -163,7 +159,6 @@ GET /comments?author.name=typicode
 Use `_page` and optionally `_limit` to paginate returned data.
 
 In the `Link` header you'll get `first`, `prev`, `next` and `last` links.
-
 
 ```
 GET /posts?_page=7
@@ -309,20 +304,20 @@ Using JS instead of a JSON file, you can create data programmatically.
 ```javascript
 // index.js
 module.exports = () => {
-  const data = { users: [] }
+  const data = { users: [] };
   // Create 1000 users
   for (let i = 0; i < 1000; i++) {
-    data.users.push({ id: i, name: `user${i}` })
+    data.users.push({ id: i, name: `user${i}` });
   }
-  return data
-}
+  return data;
+};
 ```
 
 ```bash
 $ json-server index.js
 ```
 
-__Tip__ use modules like [Faker](https://github.com/Marak/faker.js), [Casual](https://github.com/boo1ean/casual), [Chance](https://github.com/victorquinn/chancejs) or [JSON Schema Faker](https://github.com/json-schema-faker/json-schema-faker).
+**Tip** use modules like [Faker](https://github.com/Marak/faker.js), [Casual](https://github.com/boo1ean/casual), [Chance](https://github.com/victorquinn/chancejs) or [JSON Schema Faker](https://github.com/json-schema-faker/json-schema-faker).
 
 ### HTTPS
 
@@ -364,9 +359,9 @@ You can add your middlewares from the CLI using `--middlewares` option:
 ```js
 // hello.js
 module.exports = (req, res, next) => {
-  res.header('X-Hello', 'World')
-  next()
-}
+  res.header('X-Hello', 'World');
+  next();
+};
 ```
 
 ```bash
@@ -417,7 +412,7 @@ You can also set options in a `json-server.json` configuration file.
 
 ### Module
 
-If you need to add authentication, validation, or __any behavior__, you can use the project as a module in combination with other Express middlewares.
+If you need to add authentication, validation, or **any behavior**, you can use the project as a module in combination with other Express middlewares.
 
 #### Simple example
 
@@ -427,27 +422,27 @@ $ npm install json-server --save-dev
 
 ```js
 // server.js
-const jsonServer = require('json-server')
-const server = jsonServer.create()
-const router = jsonServer.router('db.json')
-const middlewares = jsonServer.defaults()
+const jsonServer = require('json-server');
+const server = jsonServer.create();
+const router = jsonServer.router('db.json');
+const middlewares = jsonServer.defaults();
 
-server.use(middlewares)
-server.use(router)
+server.use(middlewares);
+server.use(router);
 server.listen(3000, () => {
-  console.log('JSON Server is running')
-})
+  console.log('JSON Server is running');
+});
 ```
 
 ```sh
 $ node server.js
 ```
 
-The path you provide to the `jsonServer.router` function  is relative to the directory from where you launch your node process. If you run the above code from another directory, it’s better to use an absolute path:
+The path you provide to the `jsonServer.router` function is relative to the directory from where you launch your node process. If you run the above code from another directory, it’s better to use an absolute path:
 
 ```js
-const path = require('path')
-const router = jsonServer.router(path.join(__dirname, 'db.json'))
+const path = require('path');
+const router = jsonServer.router(path.join(__dirname, 'db.json'));
 ```
 
 For an in-memory database, simply pass an object to `jsonServer.router()`.
@@ -459,58 +454,60 @@ Please note also that `jsonServer.router()` can be used in existing Express proj
 Let's say you want a route that echoes query parameters and another one that set a timestamp on every resource created.
 
 ```js
-const jsonServer = require('json-server')
-const server = jsonServer.create()
-const router = jsonServer.router('db.json')
-const middlewares = jsonServer.defaults()
+const jsonServer = require('json-server');
+const server = jsonServer.create();
+const router = jsonServer.router('db.json');
+const middlewares = jsonServer.defaults();
 
 // Set default middlewares (logger, static, cors and no-cache)
-server.use(middlewares)
+server.use(middlewares);
 
 // Add custom routes before JSON Server router
 server.get('/echo', (req, res) => {
-  res.jsonp(req.query)
-})
+  res.jsonp(req.query);
+});
 
 // To handle POST, PUT and PATCH you need to use a body-parser
 // You can use the one used by JSON Server
-server.use(jsonServer.bodyParser)
+server.use(jsonServer.bodyParser);
 server.use((req, res, next) => {
   if (req.method === 'POST') {
-    req.body.createdAt = Date.now()
+    req.body.createdAt = Date.now();
   }
   // Continue to JSON Server router
-  next()
-})
+  next();
+});
 
 // Use default router
-server.use(router)
+server.use(router);
 server.listen(3000, () => {
-  console.log('JSON Server is running')
-})
+  console.log('JSON Server is running');
+});
 ```
 
 #### Access control example
 
 ```js
-const jsonServer = require('json-server')
-const server = jsonServer.create()
-const router = jsonServer.router('db.json')
-const middlewares = jsonServer.defaults()
+const jsonServer = require('json-server');
+const server = jsonServer.create();
+const router = jsonServer.router('db.json');
+const middlewares = jsonServer.defaults();
 
-server.use(middlewares)
+server.use(middlewares);
 server.use((req, res, next) => {
- if (isAuthorized(req)) { // add your authorization logic here
-   next() // continue to JSON Server router
- } else {
-   res.sendStatus(401)
- }
-})
-server.use(router)
+  if (isAuthorized(req)) {
+    // add your authorization logic here
+    next(); // continue to JSON Server router
+  } else {
+    res.sendStatus(401);
+  }
+});
+server.use(router);
 server.listen(3000, () => {
-  console.log('JSON Server is running')
-})
+  console.log('JSON Server is running');
+});
 ```
+
 #### Custom output example
 
 To modify responses, overwrite `router.render` method:
@@ -519,21 +516,20 @@ To modify responses, overwrite `router.render` method:
 // In this example, returned resources will be wrapped in a body property
 router.render = (req, res) => {
   res.jsonp({
-    body: res.locals.data
-  })
-}
+    body: res.locals.data,
+  });
+};
 ```
 
 You can set your own status code for the response:
-
 
 ```javascript
 // In this example we simulate a server side error response
 router.render = (req, res) => {
   res.status(500).jsonp({
-    error: "error message here"
-  })
-}
+    error: 'error message here',
+  });
+};
 ```
 
 #### Rewriter example
@@ -542,10 +538,12 @@ To add rewrite rules, use `jsonServer.rewriter()`:
 
 ```javascript
 // Add this before server.use(router)
-server.use(jsonServer.rewriter({
-  '/api/*': '/$1',
-  '/blog/:resource/:id/show': '/:resource/:id'
-}))
+server.use(
+  jsonServer.rewriter({
+    '/api/*': '/$1',
+    '/blog/:resource/:id/show': '/:resource/:id',
+  })
+);
 ```
 
 #### Mounting JSON Server on another endpoint example
@@ -553,27 +551,27 @@ server.use(jsonServer.rewriter({
 Alternatively, you can also mount the router on `/api`.
 
 ```javascript
-server.use('/api', router)
+server.use('/api', router);
 ```
 
 #### API
 
-__`jsonServer.create()`__
+**`jsonServer.create()`**
 
 Returns an Express server.
 
-__`jsonServer.defaults([options])`__
+**`jsonServer.defaults([options])`**
 
 Returns middlewares used by JSON Server.
 
-* options
-    * `static` path to static files
-    * `logger` enable logger middleware (default: true)
-    * `bodyParser` enable body-parser middleware (default: true)
-    * `noCors` disable CORS (default: false)
-    * `readOnly` accept only GET requests (default: false)
+- options
+  - `static` path to static files
+  - `logger` enable logger middleware (default: true)
+  - `bodyParser` enable body-parser middleware (default: true)
+  - `noCors` disable CORS (default: false)
+  - `readOnly` accept only GET requests (default: false)
 
-__`jsonServer.router([path|object])`__
+**`jsonServer.router([path|object])`**
 
 Returns JSON Server router.
 
@@ -585,24 +583,24 @@ You can deploy JSON Server. For example, [JSONPlaceholder](http://jsonplaceholde
 
 ### Video
 
-* [Creating Demo APIs with json-server on egghead.io](https://egghead.io/lessons/nodejs-creating-demo-apis-with-json-server)
+- [Creating Demo APIs with json-server on egghead.io](https://egghead.io/lessons/nodejs-creating-demo-apis-with-json-server)
 
 ### Articles
 
-* [Node Module Of The Week - json-server](http://nmotw.in/json-server/)
-* [ng-admin: Add an AngularJS admin GUI to any RESTful API](http://marmelab.com/blog/2014/09/15/easy-backend-for-your-restful-api.html)
-* [Fast prototyping using Restangular and Json-server](https://glebbahmutov.com/blog/fast-prototyping-restangular-and-json-server/)
-* [Create a Mock REST API in Seconds for Prototyping your Frontend](https://coligo.io/create-mock-rest-api-with-json-server/)
-* [No API? No Problem! Rapid Development via Mock APIs](https://medium.com/@housecor/rapid-development-via-mock-apis-e559087be066#.93d7w8oro)
-* [Zero Code REST With json-server](https://dzone.com/articles/zero-code-rest-with-json-server)
+- [Node Module Of The Week - json-server](http://nmotw.in/json-server/)
+- [ng-admin: Add an AngularJS admin GUI to any RESTful API](http://marmelab.com/blog/2014/09/15/easy-backend-for-your-restful-api.html)
+- [Fast prototyping using Restangular and Json-server](https://glebbahmutov.com/blog/fast-prototyping-restangular-and-json-server/)
+- [Create a Mock REST API in Seconds for Prototyping your Frontend](https://coligo.io/create-mock-rest-api-with-json-server/)
+- [No API? No Problem! Rapid Development via Mock APIs](https://medium.com/@housecor/rapid-development-via-mock-apis-e559087be066#.93d7w8oro)
+- [Zero Code REST With json-server](https://dzone.com/articles/zero-code-rest-with-json-server)
 
 ### Third-party tools
 
-* [Grunt JSON Server](https://github.com/tfiwm/grunt-json-server)
-* [Docker JSON Server](https://github.com/clue/docker-json-server)
-* [JSON Server GUI](https://github.com/naholyr/json-server-gui)
-* [JSON file generator](https://github.com/dfsq/json-server-init)
-* [JSON Server extension](https://github.com/maty21/json-server-extension)
+- [Grunt JSON Server](https://github.com/tfiwm/grunt-json-server)
+- [Docker JSON Server](https://github.com/clue/docker-json-server)
+- [JSON Server GUI](https://github.com/naholyr/json-server-gui)
+- [JSON file generator](https://github.com/dfsq/json-server-init)
+- [JSON Server extension](https://github.com/maty21/json-server-extension)
 
 ## License
 

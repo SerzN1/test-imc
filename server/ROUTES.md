@@ -9,7 +9,7 @@ You can only access the resources through the `GET` HTTP method.
 
 ### Products
 
-List of all available products. `id` parameter is optional, if  not specified, all the products will be retrieved.
+List of all available products. `id` parameter is optional, if not specified, all the products will be retrieved.
 
 #### Route
 
@@ -21,17 +21,17 @@ GET /api/products/:id?
 
 ```json
 {
-    "id": "<number>",
-    "category": "<string>",
-    "name": "<string>",
-    "sale_price": "<number>",
-    "margin": "<number>"
+  "id": "<number>",
+  "category": "<string>",
+  "name": "<string>",
+  "sale_price": "<number>",
+  "margin": "<number>"
 }
 ```
 
 ### Costumers
 
-List of all company customers. `id` parameter is optional, if  not specified, all the products will be retrieved.
+List of all company customers. `id` parameter is optional, if not specified, all the products will be retrieved.
 
 #### Route
 
@@ -43,9 +43,9 @@ GET /api/customers/:id?
 
 ```json
 {
-    "id": "<number>",
-    "firstName": "<string>",
-    "lastName": "<string>"
+  "id": "<number>",
+  "firstName": "<string>",
+  "lastName": "<string>"
 }
 ```
 
@@ -69,7 +69,7 @@ GET /api/invoices/:id?
   "date": "<YYYY-MM-DD>",
   "total_invoice": "<number>",
   "total_margin": "<number>",
-  "region":  "<string>",
+  "region": "<string>",
   "invoice_lines": [
     {
       "product_id": "<number>",
@@ -101,13 +101,13 @@ GET /api/revenues/:period
 
 ```json
 {
-    "week": "<YYYY W-ww>",
-    "month": "<YYYY-MM>",
-    "start_date": "<YYYY-MM-DD>",
-    "end_date": "<YYYY-MM-DD>",
-    "invoices_count": "<number>",
-    "total_margin": "<number>",
-    "total_revenue": "<number>"
+  "week": "<YYYY W-ww>",
+  "month": "<YYYY-MM>",
+  "start_date": "<YYYY-MM-DD>",
+  "end_date": "<YYYY-MM-DD>",
+  "invoices_count": "<number>",
+  "total_margin": "<number>",
+  "total_revenue": "<number>"
 }
 ```
 
@@ -123,17 +123,17 @@ GET /api/customers/revenues
 
 ```json
 {
-    "customer_id": "<number>",
-    "customer_name": "<string>",
-    "total_revenue":"<number>",
-    "total_margin": "<number>",
-    "invoices_count": "<number>"
+  "customer_id": "<number>",
+  "customer_name": "<string>",
+  "total_revenue": "<number>",
+  "total_margin": "<number>",
+  "invoices_count": "<number>"
 }
 ```
 
 ### Best products categories
 
-Retrieve the products categories, and the  total amount of revenues and margin they generated.
+Retrieve the products categories, and the total amount of revenues and margin they generated.
 
 #### Route
 
@@ -145,10 +145,8 @@ GET /api/categories/revenues
 
 ```json
 {
-    "category_name": "<string>",
-    "total_revenue": "<number>",
-    "total_margin": "<number>"
+  "category_name": "<string>",
+  "total_revenue": "<number>",
+  "total_margin": "<number>"
 }
 ```
-
-

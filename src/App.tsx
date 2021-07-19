@@ -5,6 +5,7 @@ import { H2 } from './components/Typography/Typography';
 import { Filter } from './components/Filter/Filter';
 import { BestCustomersTable } from './patterns/BestCustomersTable';
 import { LatestInvoicesTable } from './patterns/LatestInvoicesTable';
+import { TotalRevenueChart } from './patterns/TotalRevenueChart';
 import { PeriodFilter, ValueTypeFilter } from './constant';
 import './App.css';
 
@@ -22,7 +23,6 @@ function App() {
       <Header />
       <main className="main">
         <div className="container">
-
           <section className="row filters">
             <div className="col">
               <Filter
@@ -54,6 +54,12 @@ function App() {
             </div>
           </section>
 
+          <section className="row">
+            <div className="col-12">
+              <H2>Total revenues per products categories</H2>
+              <TotalRevenueChart period={period} valueType={valueType} />
+            </div>
+          </section>
         </div>
       </main>
       <Footer />

@@ -27,3 +27,19 @@ interface IInvoice {
   total_margin: number;
   region: string;
 }
+
+interface IRevenue {
+  end_date: string;
+  invoices_count: number;
+  start_date: string;
+  total_margin: number;
+  total_revenue: number;
+}
+
+interface IMonthlyRevenue extends IRevenue {
+  month: string;
+}
+
+interface IWeeklyRevenue extends IRevenue {
+  week: string;
+}

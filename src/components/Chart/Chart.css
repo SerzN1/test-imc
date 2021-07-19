@@ -1,0 +1,41 @@
+.chart {
+  background: var(--bg-light);
+  color: var(--font-dark);
+  border: 1px solid var(--font-light);
+  position: relative;
+  padding: 2rem 1rem;
+  box-sizing: content-box;
+}
+
+.chart-y {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+.chart-point {
+  position: absolute;
+  bottom: 2rem;
+  background-color: var(--light);
+  border: 1px solid var(--dark);
+  transform: translateX(-50%);
+  border-bottom-color: var(--font-dark);
+}
+
+.chart-value {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  font-size: 10px;
+  transform: translateX(-50%);
+  padding-bottom: 4px;
+}
+
+.chart-title {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  padding-top: 4px;
+}

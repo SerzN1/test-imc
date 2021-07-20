@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import './Table.css';
 
 interface TableProps {
@@ -6,14 +6,16 @@ interface TableProps {
   useScroll?: boolean;
 }
 
-export const Table: React.FC<TableProps> = ({ children, useScroll = false }) =>
-  useScroll ? (
-    <div className="table-wrapper">
+export const Table: React.FC<TableProps> = memo(
+  ({ children, useScroll = false }) =>
+    useScroll ? (
+      <div className="table-wrapper">
+        <table className="table">{children}</table>
+      </div>
+    ) : (
       <table className="table">{children}</table>
-    </div>
-  ) : (
-    <table className="table">{children}</table>
-  );
+    )
+);
 
 interface TableHeaderItem {
   name: string;

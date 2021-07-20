@@ -16,7 +16,13 @@ export const LatestInvoicesTable: React.FC<LatestInvoicesTableProps> = memo(
       'date',
       'customer name',
       'region',
-      valueType === ValueTypeFilter.margin ? 'total margin' : 'invoice total',
+      {
+        name:
+          valueType === ValueTypeFilter.margin
+            ? 'total margin'
+            : 'invoice total',
+        align: 'right' as 'right',
+      },
     ];
 
     const { isLoading, data, error } = useLatestInvoices();

@@ -7,19 +7,27 @@
 
 .table {
   border-spacing: 0;
+  width: 100%;
+  position: relative;
 }
 
 .table--full-size {
   width: 100%;
 }
 
+.table-head {
+  position: sticky;
+  z-index: 1;
+  top: 0;
+}
 .table-head th {
   padding: 0 0.5rem 1rem;
   font-size: 13px;
   font-weight: normal;
   line-height: 1rem;
-  border-bottom: 1px solid #f3f4f7;
-  color: #8d96b2;
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border-light);
+  color: var(--font-semi-light);
   text-align: left;
 }
 .table-head th:first-child {

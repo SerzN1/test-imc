@@ -47,7 +47,7 @@
   font-size: 14px;
   line-height: 20px;
   padding-right: 0.5rem;
-  border-bottom: 1px solid var(--light);
+  border-bottom: 1px solid var(--border-light);
 }
 .table-body td:first-child {
   position: sticky;

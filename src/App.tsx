@@ -5,7 +5,8 @@ import { H2 } from './components/Typography/Typography';
 import { Filter } from './components/Filter/Filter';
 import { BestCustomersTable } from './patterns/BestCustomersTable';
 import { LatestInvoicesTable } from './patterns/LatestInvoicesTable';
-import { TotalRevenueChart } from './patterns/TotalRevenueChart';
+import { RevenueChart } from './patterns/RevenueChart';
+import { CummulativeRevenueChart } from './patterns/CummulativeRevenueChart';
 import { PeriodFilter, ValueTypeFilter } from './constant';
 import './App.css';
 
@@ -41,23 +42,26 @@ function App() {
           </section>
 
           <section className="row">
-            <div className="col-12">
+            <div className="col-12 col-md-6">
               <H2>Latest invioces</H2>
               <LatestInvoicesTable valueType={valueType} />
             </div>
-          </section>
-
-          <section className="row">
-            <div className="col-12">
+            <div className="col-12 col-md-6">
               <H2>Our best customers</H2>
               <BestCustomersTable valueType={valueType} />
             </div>
           </section>
 
           <section className="row">
-            <div className="col-12">
-              <H2>Total revenues per products categories</H2>
-              <TotalRevenueChart period={period} valueType={valueType} />
+            <div className="col-12 col-md-6">
+              <H2>Total {valueType} per products categories</H2>
+              <RevenueChart period={period} valueType={valueType} />
+            </div>
+            <div className="col-12 col-md-6">
+              <H2>
+                Cumulative invoices {valueType}/{period}
+              </H2>
+              <CummulativeRevenueChart period={period} valueType={valueType} />
             </div>
           </section>
         </div>

@@ -17,7 +17,9 @@ export function intToString(num: number): string {
     }
   }
   return (
-    (num / si[i].v).toFixed(2).replace(/\.0+$|(\.[0-9]*[1-9])0+$/, '$1') +
-    si[i].s
+    (num / si[i].v)
+      .toFixed(2)
+      .slice(0, 3)
+      .replace(/\.0+$|(\.[0-9]*[1-9])0+$/, '$1') + si[i].s
   );
 }

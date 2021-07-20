@@ -1,0 +1,63 @@
+.linechart {
+  background: var(--bg-light);
+  color: var(--font-dark);
+  border: 1px solid var(--font-light);
+  padding: 2rem 1rem;
+  box-sizing: content-box;
+  position: relative;
+}
+
+.linechart-plot {
+  position: relative;
+  border-bottom: 1px solid var(--font-dark);
+  padding: 0 1rem;
+}
+
+.linechart-svg {
+  width: 100%;
+}
+
+.linechart-axiz {
+  fill: none;
+  stroke-dasharray: 1%;
+  stroke: var(--border-dark);
+  stroke-width: 0.5;
+}
+
+.linechart-y,
+.linechart-x {
+  position: absolute;
+  font-size: 9px;
+  text-transform: uppercase;
+}
+.linechart-y {
+  top: 0.5rem;
+  left: 0.25rem;
+  transform: rotateZ(-90deg) translateX(-100%);
+  transform-origin: left top;
+}
+.linechart-x {
+  bottom: 0.25rem;
+  right: 0.25rem;
+}
+
+.linechart-line {
+  stroke-width: 1;
+  stroke: var(--dark);
+  fill: none;
+}
+
+.linechart-value {
+  padding: 4px 0;
+  position: absolute;
+  font-size: 10px;
+  left: 1rem;
+}
+
+.linechart-title {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  font-size: 11px;
+  padding-top: 4px;
+}

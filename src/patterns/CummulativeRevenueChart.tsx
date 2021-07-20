@@ -1,15 +1,15 @@
 import React, { memo } from 'react';
 import { useCummulativeRevenuePoints } from '../api/useRevenues';
-import { Chart } from '../components/Chart/Chart';
+import { LineChart } from '../components/Chart/LineChart';
 import { ValueTypeFilter, PeriodFilter } from '../constant';
 
-interface TotalRevenueChartProps {
+interface CummulativeRevenueChartProps {
   valueType: ValueTypeFilter;
   period: PeriodFilter;
 }
 
-export const TotalRevenueChart: React.FC<TotalRevenueChartProps> = memo(
-  ({ period, valueType }) => {
+export const CummulativeRevenueChart: React.FC<CummulativeRevenueChartProps> =
+  memo(({ period, valueType }) => {
     const { isLoading, data, error } = useCummulativeRevenuePoints(
       period,
       valueType
@@ -22,6 +22,5 @@ export const TotalRevenueChart: React.FC<TotalRevenueChartProps> = memo(
       return <div>loading error</div>;
     }
 
-    return <Chart points={data} y={valueType} />;
-  }
-);
+    return <LineChart points={data} y={valueType} x={period} />;
+  });

@@ -16,7 +16,7 @@ export const useRevenues = (period: PeriodFilter) => {
   };
 };
 
-interface CumullativeRevenuePoint {
+interface RevenuePoint {
   index: number;
   title: string;
   value: number;
@@ -26,13 +26,11 @@ const MONTH_NAMES = 'jan feb mar apr may jun jul aug sep oct nov dec'.split(
   ' '
 );
 
-export const useCummulativeRevenuePoints = (
+export const useRevenuePoints = (
   period: PeriodFilter,
   valueType: ValueTypeFilter
 ) => {
-  const [cummulativeRevenuePoints, setCummulativeRevenuePoints] = useState<
-    CumullativeRevenuePoint[]
-  >([]);
+  const [revenuePoints, setRevenuePoints] = useState<RevenuePoint[]>([]);
   const { isLoading, data, error } = useRevenues(period);
 
   useEffect(() => {
@@ -61,13 +59,38 @@ export const useCummulativeRevenuePoints = (
         }
       });
 
-      points.sort(
-        (a: CumullativeRevenuePoint, b: CumullativeRevenuePoint) =>
-          a.index - b.index
-      );
+      points.sort((a: RevenuePoint, b: RevenuePoint) => a.index - b.index);
+      setRevenuePoints(points);
+    } else {
+      setRevenuePoints([]);
+    }
+  }, [data, valueType]);
+
+  return {
+    isLoading,
+    data: revenuePoints,
+    error,
+  };
+};
+
+export const useCummulativeRevenuePoints = (
+  period: PeriodFilter,
+  valueType: ValueTypeFilter
+) => {
+  const [cummulativeRevenuePoints, setCummulativeRevenuePoints] = useState<
+    RevenuePoint[]
+  >([]);
+  const {
+    isLoading,
+    data: revenuePoints,
+    error,
+  } = useRevenuePoints(period, valueType);
+
+  useEffect(() => {
+    if (revenuePoints) {
       let sum = 0;
       setCummulativeRevenuePoints(
-        points.map((p: CumullativeRevenuePoint) => {
+        revenuePoints.map((p: RevenuePoint) => {
           sum += p.value;
           return {
             ...p,
@@ -78,7 +101,7 @@ export const useCummulativeRevenuePoints = (
     } else {
       setCummulativeRevenuePoints([]);
     }
-  }, [data, valueType]);
+  }, [revenuePoints, period, valueType]);
 
   return {
     isLoading,
